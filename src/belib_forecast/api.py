@@ -21,6 +21,11 @@ class Point(BaseModel):
     lat: float | None = None
     lon: float | None = None
 
+class ArrondissementStats(BaseModel):
+    arrondissement: str
+    free_points: int
+    total_points: int
+
 
 def to_point(r: dict) -> Point:
     coords = r.get("coordonneesxy") or {}
@@ -76,3 +81,14 @@ def get_point(id_pdc: str):
 def stats():
     points = get_points()
     return {"total": len(points), "by_statut": Counter(p.statut for p in points)}
+
+
+@app.get("/arrondissements", response_model=list[ArrondissementStats])
+def list_arrondissements():
+    points = [p for p in get_points() if p.arrondissement]
+    total = Counter(p.arrondissement for p in points)
+    free = Counter(p.arrondissement for p in points if p.statut == "Disponible")
+    return [
+        ArrondissementStats(arrondissement=a, free_points=free[a], total_points=total[a])
+        for a in sorted(total)
+    ]
