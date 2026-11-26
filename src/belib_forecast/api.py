@@ -2,11 +2,20 @@ import time
 from collections import Counter
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from belib_forecast.collect_once import fetch_records
 
 app = FastAPI(title="Belib' Forecast API")
+
+# Allow only the local frontend (Vite dev server), and only read requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
 
 CACHE_SECONDS = 60
 _cache = {"fetched_at": 0.0, "points": []}
@@ -20,6 +29,7 @@ class Point(BaseModel):
     arrondissement: str | None = None
     lat: float | None = None
     lon: float | None = None
+
 
 class ArrondissementStats(BaseModel):
     arrondissement: str
