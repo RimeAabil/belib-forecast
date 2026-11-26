@@ -1001,7 +1001,6 @@ FR*V75*EPX15*12*1,44 Rue Paul Barruel 75015 Paris,15e Arrondissement,75056,48.83
 FR*V75*EPX13*17*1,41 Rue de Tolbiac 75013 Paris,13e Arrondissement,75056,48.827972,2.372195
 FR*V75*EPX15*16*4,171 Rue de la Convention 75015 Paris,15e Arrondissement,75056,48.838314,2.2943442
 FR*V75*EPX08*53*5*1,422 Rue Saint-Honoré 75008 Paris,08e Arrondissement,75056,48.86832,2.323689
-FR*V75*EPX05*10*3,7 Rue Paul Painlevé 75005 Paris,05e Arrondissement,75056,48.849903,2.3444285
 FR*V75*EPX04*06*4,8 Quai du Marché Neuf 75004 Paris,Paris centre,75056,48.8542,2.345341
 FR*V75*EPX16*07*4,2 square Tolstoï 75016 Paris,16e Arrondissement,75056,48.8531,2.261698
 FR*V75*EPX04*02*4,80 Rue François Miron 75004 Paris,Paris centre,75056,48.855366,2.3591938
@@ -1056,8 +1055,9 @@ FR*V75*EPX18*06*4,150 Rue Marcadet 75018 Paris,18e Arrondissement,75056,48.8913,
 FR*V75*EPX15*25*2,2 Rue de Cronstadt 75015 Paris,15e Arrondissement,75056,48.8349,2.3026
 FR*V75*EPX16*21*4,55 Rue d'Auteuil 75016 Paris,16e Arrondissement,75056,48.8478,2.2636
 FR*V75*EPX20*16*3,16 Rue du Télégraphe 75020 Paris,20e Arrondissement,75056,48.87233,2.39951
-FR*V75*EPX20*03*1,14 Rue Sorbier 75020 Paris,20e Arrondissement,75056,48.86732,2.3906963
 FR*V75*EPX11*06*2,63 Boulevard Richard Lenoir 75011 Paris,11e Arrondissement,75056,48.86023,2.3719914
+FR*V75*EPX05*10*3,7 Rue Paul Painlevé 75005 Paris,05e Arrondissement,75056,48.849903,2.3444285
+FR*V75*EPX20*03*1,14 Rue Sorbier 75020 Paris,20e Arrondissement,75056,48.86732,2.3906963
 FR*V75*EPX12*07*4,20 Boulevard de la Bastille 75012 Paris,12e Arrondissement,75056,48.84837,2.367915
 FR*V75*E9016*02*2,37 Avenue d'Iéna 75016 Paris,16e Arrondissement,75056,48.86851,2.295469
 FR*V75*EPX12*19*5,7 rue Abel 75012 PARIS,12e Arrondissement,75056,48.846645,2.3747718
