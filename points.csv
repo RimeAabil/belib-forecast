@@ -67,7 +67,6 @@ FR*V75*EPX16*08*4,14 Avenue Théophile Gauthier 75016 Paris,16e Arrondissement,7
 FR*V75*EPX15*16*5,171 Rue de la Convention 75015 Paris,15e Arrondissement,75056,48.838314,2.2943442
 FR*V75*EPX16*04*4,42 Rue Jean de la Fontaine 75016 Paris,16e Arrondissement,75056,48.850998,2.2719011
 FR*V75*EPX15*13*4,29 Rue Cotentin 75015 Paris,15e Arrondissement,75056,48.838547,2.312675
-FR*V75*EPX14*03*3,56 Rue des Plantes 75014 Paris,14e Arrondissement,75056,48.82837,2.3216963
 FR*V75*EPX15*21*5,1 Rue Jean Sicard 75015 Paris,15e Arrondissement,75056,48.8287,2.2989
 FR*V75*EPX09*06*2,13 Rue du conservatoire 75009 Paris,09e Arrondissement,75056,48.87359,2.3466527
 FR*V75*EPX10*07*5,24 Rue du Château Landon 75010 Paris,10e Arrondissement,75056,48.881493,2.362957
@@ -98,6 +97,7 @@ FR*V75*E9018*03*2,150 Rue des Poissonniers 75018 Paris,18e Arrondissement,75056,
 FR*V75*E9006*01*2,7 Rue Danton 75006 Paris,06e Arrondissement,75056,48.85246,2.341483
 FR*V75*E9004*02*2,44 Quai Henri IV 75004 Paris,Paris centre,75056,48.85023,2.3615763
 FR*V75*EPX20*02*7,265 Rue de Belleville 75020 Paris,20e Arrondissement,75056,48.87559,2.399738
+FR*V75*EPX14*03*3,56 Rue des Plantes 75014 Paris,14e Arrondissement,75056,48.82837,2.3216963
 FR*V75*E9005*01*1,17 Place du Panthéon 75005 Paris,05e Arrondissement,75056,48.845715,2.345032
 FR*V75*EPX16*23*4,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
 FR*V75*EPX16*23*5,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
@@ -922,7 +922,6 @@ FR*V75*EPX11*02*7,162 Rue de la Roquette 75011 Paris,11e Arrondissement,75056,48
 FR*V75*EPX01*03*6,14 Rue Bertin Poirée 75001 Paris,Paris centre,75056,48.85881,2.3449502
 FR*V75*EPX20*03*2,14 Rue Sorbier 75020 Paris,20e Arrondissement,75056,48.86732,2.3906963
 FR*V75*EPX19*01*1,76 Rue Botzaris 75019 Paris,19e Arrondissement,75056,48.879482,2.388647
-FR*V75*EPX11*01*7,155 Avenue Ledru Rollin 75011 Paris,11e Arrondissement,75056,48.855328,2.378338
 FR*V75*EPX09*03*3,28 Rue d'Aumale 75009 Paris,09e Arrondissement,75056,48.878643,2.3347774
 FR*V75*EPX07*05*6,2 Rue Duroc 75007 Paris,07e Arrondissement,75056,48.84828,2.315725
 FR*V75*EPX06*02*2,8 Rue Danton 75006 Paris,06e Arrondissement,75056,48.85262,2.342107
@@ -950,6 +949,7 @@ FR*V75*E9002*01*2,7 Boulevard des Capucines 75002 Paris,Paris centre,75056,48.87
 FR*V75*EPX15*21*6,1 Rue Jean Sicard 75015 Paris,15e Arrondissement,75056,48.8287,2.2989
 FR*V75*EPX12*20*6,88 Rue de Bercy 75012 Paris,12e Arrondissement,75056,48.838615,2.3818836
 FR*V75*EPX13*16*5,147 Rue de Tolbiac 75013 Paris,13e Arrondissement,75056,48.826084,2.358049
+FR*V75*EPX11*01*7,155 Avenue Ledru Rollin 75011 Paris,11e Arrondissement,75056,48.855328,2.378338
 FR*V75*EPX08*53*5*1,422 Rue Saint-Honoré 75008 Paris,08e Arrondissement,75056,48.86832,2.323689
 FR*V75*EPX16*40*1*1,93 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.86919,2.284743
 FR*V75*EPX17*64*1*1,92 Bd des Batignolles 75017 Paris,17e Arrondissement,75056,48.881844,2.317593
@@ -1817,7 +1817,6 @@ FR*V75*EPX06*07*1,38 Rue du Four 75006 Paris,06e Arrondissement,75056,48.85245,2
 FR*V75*EPX08*53*4*1,422 Rue Saint-Honoré 75008 Paris,08e Arrondissement,75056,48.86832,2.323689
 FR*V75*EPX17*64*3*1,92 Bd des Batignolles 75017 Paris,17e Arrondissement,75056,48.881844,2.317593
 FR*V75*EPX09*51*2*1,26 avenue Trudaine 75009 Paris,09e Arrondissement,75056,48.881023,2.3410876
-FR*V75*EPX07*50*1*1,15 Av.Emile Deschanel 75007 Paris,07e Arrondissement,75056,48.855835,2.3022223
 FR*V75*EPX18*17*4,15 Rue Pierre Mauroy 75018 Paris,18e Arrondissement,75056,48.89594,2.3579938
 FR*V75*EPX13*22*3,67 Avenue Edisson 75013 PARIS,13e Arrondissement,75056,48.829895,2.3587494
 FR*V75*EPX13*22*2,67 Avenue Edisson 75013 PARIS,13e Arrondissement,75056,48.829895,2.3587494
@@ -1915,6 +1914,7 @@ FR*V75*E9011*02*2,40 Boulevard du Temple 75011 Paris,Paris centre,75056,48.86509
 FR*V75*E9009*01*2,31 Boulevard de Clichy 75009 Paris,09e Arrondissement,75056,48.88264,2.335728
 FR*V75*EPX20*02*4,265 Rue de Belleville 75020 Paris,20e Arrondissement,75056,48.87559,2.399738
 FR*V75*EPX11*06*6,63 Boulevard Richard Lenoir 75011 Paris,11e Arrondissement,75056,48.86023,2.3719914
+FR*V75*EPX07*50*1*1,15 Av.Emile Deschanel 75007 Paris,07e Arrondissement,75056,48.855835,2.3022223
 FR*V75*E9005*01*2,17 Place du Panthéon 75005 Paris,05e Arrondissement,75056,48.845715,2.345032
 FR*V75*EPX19*02*7,61 Avenue de Flandre 75019 Paris,19e Arrondissement,75056,48.888195,2.37308
 FR*V75*EPX15*28*6,108 Rue Balard 75015 Paris,15e Arrondissement,75056,48.8373,2.2787
@@ -1993,7 +1993,6 @@ FR*V75*EPX16*02*3,20 Avenue Raphaël 75016 Paris,16e Arrondissement,75056,48.859
 FR*V75*EPX12*06*4,94 Avenue de Saint-Mandé 75012 Paris,12e Arrondissement,75056,48.8444,2.407044
 FR*V75*EPX17*02*6,12 Place du Général Koënig 75017 Paris,17e Arrondissement,75056,48.88112,2.284095
 FR*V75*EPX20*05*2,158 Boulevard de Charonne 75020 Paris,20e Arrondissement,75056,48.856915,2.3941433
-FR*V75*EPX13*02*6,131 Rue de Chevaleret 75013 Paris,13e Arrondissement,75056,48.83186,2.372548
 FR*V75*EPX13*01*4,77 Rue Nationale 75013 Paris,13e Arrondissement,75056,48.826855,2.3665764
 FR*V75*EPX12*05*3,73 Boulevard Diderot 75012 Paris,12e Arrondissement,75056,48.84733,2.3856323
 FR*V75*EPX11*10*4,36 Rue Saint-Maur 75011 Paris,11e Arrondissement,75056,48.861534,2.3809278
@@ -2014,8 +2013,9 @@ FR*V75*E9013*05*3,145 Rue de Tolbiac 75013 Paris,13e Arrondissement,75056,48.826
 FR*V75*EPX08*02*6,19 Rue du Chateaubriand 75008 Paris,08e Arrondissement,75056,48.873478,2.3008885
 FR*V75*E9019*05*1,14 Rue de Crimée 75019 Paris,19e Arrondissement,75056,48.8778,2.39182
 FR*V75*E9007*04*2,35 Rue du Bac 75007 Paris,07e Arrondissement,75056,48.857124,2.327753
-FR*V75*E9015*01*1,18 Avenue Emile Zola 75015 Paris,15e Arrondissement,75056,48.846214,2.279884
 FR*V75*EPX19*11*3,82 Rue de Crimée 75019 Paris,19e Arrondissement,75056,48.8824,2.3866
+FR*V75*EPX13*02*6,131 Rue de Chevaleret 75013 Paris,13e Arrondissement,75056,48.83186,2.372548
+FR*V75*E9015*01*1,18 Avenue Emile Zola 75015 Paris,15e Arrondissement,75056,48.846214,2.279884
 FR*V75*EPX18*65*6*1,,,,,
 FR*V75*EPX05*45*3*1,,,,,
 FR*V75*EPX01*43*4*1,,,,,
