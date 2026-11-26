@@ -1406,7 +1406,6 @@ FR*V75*EPX13*16*1,147 Rue de Tolbiac 75013 Paris,13e Arrondissement,75056,48.826
 FR*V75*EPX12*17*4,122 ter Rue de Picpus 75012 Paris,12e Arrondissement,75056,48.837315,2.4022446
 FR*V75*EPX12*11*5,3 Rue Henard 75012 Paris,12e Arrondissement,75056,48.84154,2.389211
 FR*V75*EPX11*16*1,1 Rue Roubo 75011 Paris,11e Arrondissement,75056,48.849968,2.387246
-FR*V75*EPX10*12*3,91 Rue du Faubourg Saint-Denis 75010 Paris,10e Arrondissement,75056,48.87407,2.3551424
 FR*V75*EPX11*15*5,104 Avenue Ledru Rollin 75011 Paris,11e Arrondissement,75056,48.85189,2.376434
 FR*V75*EPX09*11*3,12 Rue Milton 75009 Paris,09e Arrondissement,75056,48.87772,2.3409176
 FR*V75*EPX09*09*5,56 Rue la Fayette 75009 Paris,09e Arrondissement,75056,48.875465,2.342083
@@ -1482,6 +1481,7 @@ FR*V75*E9013*06*2,234 Rue de Tolbiac 75013 Paris,13e Arrondissement,75056,48.826
 FR*V75*E9006*03*3,66 Rue de Rennes 75006 Paris,06e Arrondissement,75056,48.852127,2.331346
 FR*V75*E9006*01*3,7 Rue Danton 75006 Paris,06e Arrondissement,75056,48.85246,2.341483
 FR*V75*E9006*03*1,66 Rue de Rennes 75006 Paris,06e Arrondissement,75056,48.852127,2.331346
+FR*V75*EPX10*12*3,91 Rue du Faubourg Saint-Denis 75010 Paris,10e Arrondissement,75056,48.87407,2.3551424
 FR*V75*EPX16*23*2,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
 FR*V75*EPX16*23*6,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
 FR*V75*EPX13*27*2,189 Rue Tolbiac 75013 Paris,13e Arrondissement,75056,48.82583,2.35127
