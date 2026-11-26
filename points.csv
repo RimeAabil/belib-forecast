@@ -77,6 +77,14 @@ FR*V75*E9008*04*2,55 Rue Pierre Charron 75008 Paris,08e Arrondissement,75056,48.
 FR*V75*E9006*01*2,7 Rue Danton 75006 Paris,06e Arrondissement,75056,48.85246,2.341483
 FR*V75*EPX16*04*4,42 Rue Jean de la Fontaine 75016 Paris,16e Arrondissement,75056,48.850998,2.2719011
 FR*V75*EPX12*10*5,1 Avenue Émile Laurent 75012 Paris,12e Arrondissement,75056,48.84071,2.409631
+FR*V75*EPX15*26*4,143 Avenue Émile Zola 75015 Paris,15e Arrondissement,75056,48.8472,2.2953
+FR*V75*EPX17*13*3,181 quater Avenue de Clichy 75017 Paris,17e Arrondissement,75056,48.8935,2.3148
+FR*V75*EPX03*06*2,98 Rue de Turenne 75003 Paris,Paris centre,75056,48.86235,2.3648512
+FR*V75*EPX20*14*1,15 Boulevard Mortier 75020 Paris,20e Arrondissement,75056,48.8657,2.4087
+FR*V75*EPX06*02*3,8 Rue Danton 75006 Paris,06e Arrondissement,75056,48.85262,2.342107
+FR*V75*EPX05*14*3,36 rue Claude bernard 75005 PARIS,05e Arrondissement,75056,48.839592,2.3480084
+FR*V75*EPX07*01*6,1 Rue Chanaleilles 75007 Paris,07e Arrondissement,75056,48.85304,2.3190124
+FR*V75*EPX16*39*6*1,89 Av.Kléber 75016 Paris,16e Arrondissement,75056,48.86408,2.2883
 FR*V75*EPX12*02*2,2 Rue du Charolais 75012 Paris,12e Arrondissement,75056,48.83919,2.387853
 FR*V75*EPX10*07*2,24 Rue du Château Landon 75010 Paris,10e Arrondissement,75056,48.881493,2.362957
 FR*V75*E9020*05*3,104 Rue Louis Lumière 75020 Paris,20e Arrondissement,75056,48.863766,2.41177
@@ -90,14 +98,6 @@ FR*V75*EPX08*05*4,42 Avenue de Friedland 75008 Paris,08e Arrondissement,75056,48
 FR*V75*EPX12*10*4,1 Avenue Émile Laurent 75012 Paris,12e Arrondissement,75056,48.84071,2.409631
 FR*V75*EPX17*09*2,27 Rue des Batignolles 75017 Paris,17e Arrondissement,75056,48.8847,2.3213
 FR*V75*EPX15*16*5,171 Rue de la Convention 75015 Paris,15e Arrondissement,75056,48.838314,2.2943442
-FR*V75*EPX15*26*4,143 Avenue Émile Zola 75015 Paris,15e Arrondissement,75056,48.8472,2.2953
-FR*V75*EPX17*13*3,181 quater Avenue de Clichy 75017 Paris,17e Arrondissement,75056,48.8935,2.3148
-FR*V75*EPX03*06*2,98 Rue de Turenne 75003 Paris,Paris centre,75056,48.86235,2.3648512
-FR*V75*EPX20*14*1,15 Boulevard Mortier 75020 Paris,20e Arrondissement,75056,48.8657,2.4087
-FR*V75*EPX06*02*3,8 Rue Danton 75006 Paris,06e Arrondissement,75056,48.85262,2.342107
-FR*V75*EPX05*14*3,36 rue Claude bernard 75005 PARIS,05e Arrondissement,75056,48.839592,2.3480084
-FR*V75*EPX07*01*6,1 Rue Chanaleilles 75007 Paris,07e Arrondissement,75056,48.85304,2.3190124
-FR*V75*EPX16*39*6*1,89 Av.Kléber 75016 Paris,16e Arrondissement,75056,48.86408,2.2883
 FR*V75*E9005*01*1,17 Place du Panthéon 75005 Paris,05e Arrondissement,75056,48.845715,2.345032
 FR*V75*EPX16*23*4,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
 FR*V75*EPX16*23*5,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
@@ -459,7 +459,6 @@ FR*V75*E9012*02*1,126 Boulevard Diderot 75012 Paris,12e Arrondissement,75056,48.
 FR*V75*EPX08*19*4,43 Rue de Monceau 75008 Paris,08e Arrondissement,75056,48.877834,2.310832
 FR*V75*EPX15*27*4,4 Rue Beaugrenelle 75015 Paris,15e Arrondissement,75056,48.8479,2.2847
 FR*V75*EPX06*01*5,9 Rue Lobineau 75006 Paris,06e Arrondissement,75056,48.8516,2.3361368
-FR*V75*E9008*03*1,2 Rue Louis Murat 75008 Paris,08e Arrondissement,75056,48.875854,2.309542
 FR*V75*EPX16*19*2,1 Avenue Marceau 75016 Paris,16e Arrondissement,75056,48.8655,2.2996
 FR*V75*E9018*04*3,110 Rue Ordener 75018 Paris,18e Arrondissement,75056,48.89311,2.34066
 FR*V75*EPX17*16*4,47 Rue Navier 75017 Paris,17e Arrondissement,75056,48.895756,2.3242009
@@ -468,6 +467,7 @@ FR*V75*EPX11*08*1,36 Boulevard Richard Lenoir 75011 Paris,11e Arrondissement,750
 FR*V75*EPX14*06*3,23 Rue du Départ 75014 Paris,14e Arrondissement,75056,48.842175,2.323305
 FR*V75*EPX06*11*4,6 Rue Michelet 75006 Paris,06e Arrondissement,75056,48.842564,2.3363895
 FR*V75*EPX08*49*3*1,11 rue d'Artois 75008 Paris,08e Arrondissement,75056,48.87301,2.3077497
+FR*V75*E9008*03*1,2 Rue Louis Murat 75008 Paris,08e Arrondissement,75056,48.875854,2.309542
 FR*V75*E9005*01*3,17 Place du Panthéon 75005 Paris,05e Arrondissement,75056,48.845715,2.345032
 FR*V75*EPX20*17*2,105 Rue Pelleport 75020 Paris,20e Arrondissement,75056,48.870655,2.3991733
 FR*V75*EPX19*04*4,60 Boulevard Sérurier 75019 Paris,19e Arrondissement,75056,48.88101,2.3978
