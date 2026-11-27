@@ -648,8 +648,8 @@ FR*V75*EPX20*09*5,6 Rue Guébriant 75020 Paris,20e Arrondissement,75056,48.8731,
 FR*V75*EPX20*09*3,6 Rue Guébriant 75020 Paris,20e Arrondissement,75056,48.8731,2.4092
 FR*V75*EPX15*22*2,2 Rue Houdart de Lamotte 75015 Paris,15e Arrondissement,75056,48.8407,2.2876
 FR*V75*EPX19*09*3,16 Rue de Botzaris 75019 Paris,19e Arrondissement,75056,48.8769,2.3812
-FR*V75*E9016*04*1,4 Avenue Marcel Doret 75016 Paris,16e Arrondissement,75056,48.837055,2.259932
 FR*V75*E9012*08*3,10 Rue Villiot 75012 Paris,12e Arrondissement,75056,48.841206,2.3748827
+FR*V75*E9016*04*1,4 Avenue Marcel Doret 75016 Paris,16e Arrondissement,75056,48.837055,2.259932
 FR*V75*E9006*02*1,11 Rue de Medicis 75006 Paris,06e Arrondissement,75056,48.84824,2.339865
 FR*V75*E9011*04*2,94 Rue Saint-Maur 75011 Paris,11e Arrondissement,75056,48.865356,2.377939
 FR*V75*EPX08*49*5*1,11 rue d'Artois 75008 Paris,08e Arrondissement,75056,48.87301,2.3077497
@@ -1414,7 +1414,6 @@ FR*V75*EPX06*09*2,105 Rue de Rennes 75006 Paris,06e Arrondissement,75056,48.8489
 FR*V75*EPX04*08*2,37 Rue Sainte-Croix de la Bretonnerie 75004 Paris,Paris centre,75056,48.858505,2.3543751
 FR*V75*EPX20*14*5,15 Boulevard Mortier 75020 Paris,20e Arrondissement,75056,48.8657,2.4087
 FR*V75*EPX19*09*1,16 Rue de Botzaris 75019 Paris,19e Arrondissement,75056,48.8769,2.3812
-FR*V75*EPX19*11*1,82 Rue de Crimée 75019 Paris,19e Arrondissement,75056,48.8824,2.3866
 FR*V75*EPX18*08*4,28 Rue Championnet 75018 Paris,18e Arrondissement,75056,48.8954,2.35
 FR*V75*EPX18*08*1,28 Rue Championnet 75018 Paris,18e Arrondissement,75056,48.8954,2.35
 FR*V75*EPX17*07*6,11 Rue Marguerite Long 75017 Paris,17e Arrondissement,75056,48.8914,2.304
@@ -1482,6 +1481,7 @@ FR*V75*E9006*03*1,66 Rue de Rennes 75006 Paris,06e Arrondissement,75056,48.85212
 FR*V75*EPX16*27*5,180 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.865818,2.2762194
 FR*V75*EPX06*05*4,5 Rue Jacques Callot 75006 Paris,06e Arrondissement,75056,48.855206,2.337108
 FR*V75*EPX12*11*5,3 Rue Henard 75012 Paris,12e Arrondissement,75056,48.84154,2.389211
+FR*V75*EPX19*11*1,82 Rue de Crimée 75019 Paris,19e Arrondissement,75056,48.8824,2.3866
 FR*V75*EPX16*23*2,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
 FR*V75*EPX16*23*6,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
 FR*V75*EPX13*27*2,189 Rue Tolbiac 75013 Paris,13e Arrondissement,75056,48.82583,2.35127
