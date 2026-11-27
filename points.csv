@@ -344,7 +344,6 @@ FR*V75*EPX10*13*3,64 Rue du Faubourg Poissonnière 75010 Paris,10e Arrondissemen
 FR*V75*EPX16*39*2*1,89 Av.Kléber 75016 Paris,16e Arrondissement,75056,48.86408,2.2883
 FR*V75*EPX01*03*5,14 Rue Bertin Poirée 75001 Paris,Paris centre,75056,48.85881,2.3449502
 FR*V75*EPX14*05*5,1 Rue Boulard 75014 Paris,14e Arrondissement,75056,48.834854,2.3297832
-FR*V75*EPX17*02*2,12 Place du Général Koënig 75017 Paris,17e Arrondissement,75056,48.88112,2.284095
 FR*V75*EPX15*05*2,192 Rue de la Croix Nivert 75015 Paris,15e Arrondissement,75056,48.838886,2.2892983
 FR*V75*EPX11*08*4,36 Boulevard Richard Lenoir 75011 Paris,11e Arrondissement,75056,48.857258,2.37139
 FR*V75*EPX07*50*2*1,15 Av.Emile Deschanel 75007 Paris,07e Arrondissement,75056,48.855835,2.3022223
@@ -363,6 +362,7 @@ FR*V75*EPX19*01*2,76 Rue Botzaris 75019 Paris,19e Arrondissement,75056,48.879482
 FR*V75*EPX10*08*4,6 Rue de Metz 75010 Paris,10e Arrondissement,75056,48.87081,2.354076
 FR*V75*EPX08*09*1,7 Rue Francois 1er 75008 Paris,08e Arrondissement,75056,48.865772,2.308419
 FR*V75*EPX12*11*1,3 Rue Henard 75012 Paris,12e Arrondissement,75056,48.84154,2.389211
+FR*V75*EPX17*02*2,12 Place du Général Koënig 75017 Paris,17e Arrondissement,75056,48.88112,2.284095
 FR*V75*EPX16*20*2,70 Avenue Henri Martin 75016 Paris,16e Arrondissement,75056,48.8646,2.2754
 FR*V75*EPX15*27*5,4 Rue Beaugrenelle 75015 Paris,15e Arrondissement,75056,48.8479,2.2847
 FR*V75*EPX16*26*5,33 Rue du Ranelagh 75016 Paris,16e Arrondissement,75056,48.853813,2.2768772
@@ -1781,7 +1781,6 @@ FR*V75*EPX08*15*3,24 Rue de Liège 75008 Paris,08e Arrondissement,75056,48.87959
 FR*V75*EPX08*09*7,7 Rue Francois 1er 75008 Paris,08e Arrondissement,75056,48.865772,2.308419
 FR*V75*EPX11*18*4,105 avenue de la République 75011 Paris,11e Arrondissement,75056,48.86322,2.3862243
 FR*V75*EPX16*22*2,60 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.870342,2.286851
-FR*V75*EPX06*11*5,6 Rue Michelet 75006 Paris,06e Arrondissement,75056,48.842564,2.3363895
 FR*V75*EPX08*09*3,7 Rue Francois 1er 75008 Paris,08e Arrondissement,75056,48.865772,2.308419
 FR*V75*EPX07*08*1,45 Avenue de la Bourdonnais 75007 Paris,07e Arrondissement,75056,48.85807,2.299582
 FR*V75*EPX15*01*4,1 Rue du Colonel Pierre Avia 75015 Paris,15e Arrondissement,75056,48.8326,2.2788854
@@ -1811,6 +1810,7 @@ FR*V75*EPX06*47*2*1,39 rue Notre-Dame des Champs 75006 Paris,06e Arrondissement,
 FR*V75*EPX07*17*2,188 boulevard Saint -Germain 75007 Paris,07e Arrondissement,75056,48.85461,2.329982
 FR*V75*EPX17*22*4,28 Avenue de Niel 75017 Paris,17e Arrondissement,75056,48.88103,2.2956283
 FR*V75*EPX16*39*3*1,89 Av.Kléber 75016 Paris,16e Arrondissement,75056,48.86408,2.2883
+FR*V75*EPX06*11*5,6 Rue Michelet 75006 Paris,06e Arrondissement,75056,48.842564,2.3363895
 FR*V75*EPX15*27*1,4 Rue Beaugrenelle 75015 Paris,15e Arrondissement,75056,48.8479,2.2847
 FR*V75*EPX15*20*4,43 Rue du Docteur Finlay 75015 Paris,15e Arrondissement,75056,48.8512,2.2913
 FR*V75*EPX06*07*1,38 Rue du Four 75006 Paris,06e Arrondissement,75056,48.85245,2.3314662
