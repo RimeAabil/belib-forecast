@@ -91,13 +91,13 @@ FR*V75*EPX03*06*2,98 Rue de Turenne 75003 Paris,Paris centre,75056,48.86235,2.36
 FR*V75*EPX05*07*2,1 Rue Dante 75005 Paris,05e Arrondissement,75056,48.851387,2.3472476
 FR*V75*EPX06*08*5,2 Rue Péguy 75006 Paris,06e Arrondissement,75056,48.843006,2.3280363
 FR*V75*EPX04*03*2,13 Rue Malher 75004 Paris,Paris centre,75056,48.85648,2.361378
+FR*V75*EPX07*50*3*1,15 Av.Emile Deschanel 75007 Paris,07e Arrondissement,75056,48.855835,2.3022223
+FR*V75*EPX16*39*6*1,89 Av.Kléber 75016 Paris,16e Arrondissement,75056,48.86408,2.2883
+FR*V75*EPX02*07*4,1 Rue d'Uzès 75002 Paris,Paris centre,75056,48.870422,2.3454537
 FR*V75*EPX11*11*2,27 Rue Faidherbe 75011 Paris,11e Arrondissement,75056,48.852573,2.3830369
 FR*V75*EPX19*05*4,126 Rue d'Aubervilliers 75019 Paris,19e Arrondissement,75056,48.8917,2.3691
 FR*V75*EPX20*14*1,15 Boulevard Mortier 75020 Paris,20e Arrondissement,75056,48.8657,2.4087
 FR*V75*EPX02*05*1,36 Rue Etienne Marcel 75002 Paris,Paris centre,75056,48.86502,2.344388
-FR*V75*EPX02*07*4,1 Rue d'Uzès 75002 Paris,Paris centre,75056,48.870422,2.3454537
-FR*V75*EPX07*50*3*1,15 Av.Emile Deschanel 75007 Paris,07e Arrondissement,75056,48.855835,2.3022223
-FR*V75*EPX16*39*6*1,89 Av.Kléber 75016 Paris,16e Arrondissement,75056,48.86408,2.2883
 FR*V75*E9005*01*1,17 Place du Panthéon 75005 Paris,05e Arrondissement,75056,48.845715,2.345032
 FR*V75*EPX16*23*4,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
 FR*V75*EPX16*23*5,18 Avenue Victor Hugo 75016 Paris,16e Arrondissement,75056,48.87244,2.2915578
@@ -340,7 +340,6 @@ FR*V75*EPX09*05*5,5 Rue de la Chaussée d'Antin 75009 Paris,09e Arrondissement,7
 FR*V75*EPX20*14*4,15 Boulevard Mortier 75020 Paris,20e Arrondissement,75056,48.8657,2.4087
 FR*V75*E9017*04*3,12 Boulevard de Courcelles 75017 Paris,17e Arrondissement,75056,48.88117,2.313751
 FR*V75*EPX16*39*5*1,89 Av.Kléber 75016 Paris,16e Arrondissement,75056,48.86408,2.2883
-FR*V75*EPX10*08*4,6 Rue de Metz 75010 Paris,10e Arrondissement,75056,48.87081,2.354076
 FR*V75*EPX16*20*1,70 Avenue Henri Martin 75016 Paris,16e Arrondissement,75056,48.8646,2.2754
 FR*V75*EPX07*16*1,10 Rue jean Nicot 75007 Paris,07e Arrondissement,75056,48.86113,2.3069868
 FR*V75*EPX10*13*3,64 Rue du Faubourg Poissonnière 75010 Paris,10e Arrondissement,75056,48.87517,2.348162
@@ -355,7 +354,6 @@ FR*V75*EPX15*03*5,21 Rue Miollis 75015 Paris,15e Arrondissement,75056,48.845806,
 FR*V75*EPX18*02*5,48 Rue Henri Huchard 75018 Paris,18e Arrondissement,75056,48.89919,2.330375
 FR*V75*EPX19*07*4,50 Rue Botzaris 75019 Paris,19e Arrondissement,75056,48.8792,2.3839
 FR*V75*EPX18*16*5,16 Rue Sofia 75018 Paris,18e Arrondissement,75056,48.885006,2.3475914
-FR*V75*EPX11*02*1,162 Rue de la Roquette 75011 Paris,11e Arrondissement,75056,48.858604,2.384125
 FR*V75*EPX19*13*4,159 Rue Manin 75019 Paris,19e Arrondissement,75056,48.886097,2.3936
 FR*V75*EPX14*10*5,66 Rue Henri Barbusse 75014 Paris,14e Arrondissement,75056,48.83912,2.337229
 FR*V75*EPX17*13*2,181 quater Avenue de Clichy 75017 Paris,17e Arrondissement,75056,48.8935,2.3148
@@ -363,6 +361,8 @@ FR*V75*EPX18*14*5,1 Avenue Rachel 75018 Paris,18e Arrondissement,75056,48.884415
 FR*V75*EPX15*04*5,19 Rue Leblanc 75015 Paris,15e Arrondissement,75056,48.83984,2.273328
 FR*V75*EPX05*11*5,112 Rue Monge 75005 Paris,05e Arrondissement,75056,48.839275,2.3507414
 FR*V75*EPX08*09*1,7 Rue Francois 1er 75008 Paris,08e Arrondissement,75056,48.865772,2.308419
+FR*V75*EPX11*02*1,162 Rue de la Roquette 75011 Paris,11e Arrondissement,75056,48.858604,2.384125
+FR*V75*EPX10*08*4,6 Rue de Metz 75010 Paris,10e Arrondissement,75056,48.87081,2.354076
 FR*V75*EPX16*20*2,70 Avenue Henri Martin 75016 Paris,16e Arrondissement,75056,48.8646,2.2754
 FR*V75*EPX15*27*5,4 Rue Beaugrenelle 75015 Paris,15e Arrondissement,75056,48.8479,2.2847
 FR*V75*EPX16*26*5,33 Rue du Ranelagh 75016 Paris,16e Arrondissement,75056,48.853813,2.2768772
@@ -929,7 +929,6 @@ FR*V75*EPX12*14*3,7 boulevard de Picpus 75012 Paris,12e Arrondissement,75056,48.
 FR*V75*EPX08*10*6,69 Rue de Courcelles 75008 Paris,08e Arrondissement,75056,48.87835,2.3044934
 FR*V75*EPX06*01*3,9 Rue Lobineau 75006 Paris,06e Arrondissement,75056,48.8516,2.3361368
 FR*V75*EPX15*05*1,192 Rue de la Croix Nivert 75015 Paris,15e Arrondissement,75056,48.838886,2.2892983
-FR*V75*EPX13*17*5,41 Rue de Tolbiac 75013 Paris,13e Arrondissement,75056,48.827972,2.372195
 FR*V75*E9013*01*3,3 Avenue Claude Régaud 75013 Paris,13e Arrondissement,75056,48.822433,2.372971
 FR*V75*EPX13*06*3,12 Rue Darmesteter 75013 Paris,13e Arrondissement,75056,48.82315,2.3753989
 FR*V75*EPX10*10*3,28 Rue de Paradis 75010 Paris,10e Arrondissement,75056,48.875076,2.352321
@@ -950,6 +949,7 @@ FR*V75*EPX06*01*1,9 Rue Lobineau 75006 Paris,06e Arrondissement,75056,48.8516,2.
 FR*V75*EPX05*11*6,112 Rue Monge 75005 Paris,05e Arrondissement,75056,48.839275,2.3507414
 FR*V75*EPX20*03*2,14 Rue Sorbier 75020 Paris,20e Arrondissement,75056,48.86732,2.3906963
 FR*V75*EPX14*08*2,2 Boulevard Edgar Quinet 75014 Paris,14e Arrondissement,75056,48.83951,2.3301675
+FR*V75*EPX13*17*5,41 Rue de Tolbiac 75013 Paris,13e Arrondissement,75056,48.827972,2.372195
 FR*V75*EPX18*18*1,65 Rue Ordener 75018 Paris,18e Arrondissement,75056,48.891403,2.3505678
 FR*V75*EHBSAG*LOB*07*3,4 Rue de Lobau 75004 Paris,Paris centre,75056,48.856796,2.3538697
 FR*V75*EPX20*19*4,137 Rue des Pyrénées 75020 Paris,20e Arrondissement,75056,48.85844,2.402911
