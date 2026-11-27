@@ -2,43 +2,56 @@ import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-// Same shape as the Pydantic model `Point` in your API
-type Point = {
-  id_pdc: string;
-  statut: string;
-  last_updated: string;
-  adresse_station: string | null;
+// Same shape as the Pydantic model `Station` in the API
+type Station = {
+  adresse: string;
   arrondissement: string | null;
-  lat: number | null;
-  lon: number | null;
+  lat: number;
+  lon: number;
+  total: number;
+  available: number;
+  occupied: number;
+  out_of_service: number;
 };
 
 const API_URL = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
+const REFRESH_MS = 60_000; // 1 minute
 
-const COLORS: Record<string, string> = {
-  "Disponible": "#16a34a",          // green
-  "Occupé (en charge)": "#dc2626",  // red
-};
-const colorFor = (statut: string) => COLORS[statut] ?? "#9ca3af"; // grey for the rest
+function colorFor(s: Station) {
+  if (s.available > 0) return "#16a34a";  // green: at least one free
+  if (s.occupied > 0) return "#dc2626";   // red: all working points busy
+  return "#9ca3af";                       // grey: nothing working
+}
 
 export default function App() {
-  const [points, setPoints] = useState<Point[]>([]);
+  const [stations, setStations] = useState<Station[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [updatedAt, setUpdatedAt] = useState<Date | null>(null);
 
   useEffect(() => {
-    fetch(`${API_URL}/points`)
-      .then((res) => {
-        if (!res.ok) throw new Error(`API error ${res.status}`);
-        return res.json();
-      })
-      .then(setPoints)
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false));
+    const load = () => {
+      fetch(`${API_URL}/stations`)
+        .then((res) => {
+          if (!res.ok) throw new Error(`API error ${res.status}`);
+          return res.json();
+        })
+        .then((data: Station[]) => {
+          setStations(data);
+          setError(null);
+          setUpdatedAt(new Date());
+        })
+        .catch((e) => setError(e.message))
+        .finally(() => setLoading(false));
+    };
+
+    load();                                   // load once right away
+    const id = setInterval(load, REFRESH_MS); // then every minute
+    return () => clearInterval(id);           // cleanup when the component unmounts
   }, []);
 
-  const located = points.filter((p) => p.lat !== null && p.lon !== null);
-  const available = points.filter((p) => p.statut === "Disponible").length;
+  const available = stations.reduce((n, s) => n + s.available, 0);
+  const total = stations.reduce((n, s) => n + s.total, 0);
 
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
@@ -48,7 +61,12 @@ export default function App() {
           ? "Loading…"
           : error
           ? `Error: ${error}`
-          : `${available} / ${points.length} charging points available`}
+          : `${available} / ${total} points available in ${stations.length} stations`}
+        {updatedAt && (
+          <small style={{ marginLeft: 12, color: "#6b7280" }}>
+            updated {updatedAt.toLocaleTimeString("fr-FR")}
+          </small>
+        )}
       </header>
 
       <MapContainer center={[48.8566, 2.3522]} zoom={12} style={{ flex: 1 }}>
@@ -56,19 +74,21 @@ export default function App() {
           attribution="&copy; OpenStreetMap contributors"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {located.map((p) => (
+        {stations.map((s) => (
           <CircleMarker
-            key={p.id_pdc}
-            center={[p.lat!, p.lon!]}
-            radius={5}
-            pathOptions={{ color: colorFor(p.statut), fillOpacity: 0.8 }}
+            key={s.adresse}
+            center={[s.lat, s.lon]}
+            radius={4 + 2 * Math.sqrt(s.total)}
+            pathOptions={{ color: colorFor(s), fillOpacity: 0.8 }}
           >
             <Popup>
-              <strong>{p.adresse_station}</strong>
+              <strong>{s.adresse}</strong>
               <br />
-              {p.statut}
+              {s.available} / {s.total} available
               <br />
-              <small>Updated {new Date(p.last_updated).toLocaleString("fr-FR")}</small>
+              <small>
+                {s.occupied} charging · {s.out_of_service} out of service
+              </small>
             </Popup>
           </CircleMarker>
         ))}

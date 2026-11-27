@@ -1,5 +1,5 @@
 import time
-from collections import Counter
+from collections import Counter, defaultdict
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
