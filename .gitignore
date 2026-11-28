@@ -13,3 +13,5 @@ data/
 # Virtual environments
 .venv
 documentation/
+
+.env
