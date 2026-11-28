@@ -109,9 +109,15 @@ def main(data_dir):
     write_rows(
         state_path,
         STATE_FIELDS,
-        [{"id_pdc": k, "statut": s, "last_updated": u} for k, (s, u) in state.items()],
+        [
+            {"id_pdc": k, "statut": s, "last_updated": u}
+            for k, (s, u) in sorted(state.items())
+        ],
         "w",
     )
+    # sorted output: the file only changes when a point really changes,
+    # instead of every time the API returns the points in a different order
+    points.sort(key=lambda p: p["id_pdc"])
     write_rows(data_dir / "points.csv", POINT_FIELDS, points, "w")
     write_rows(
         runs_path,

@@ -1,0 +1,33 @@
+name: Load data into Postgres
+
+on:
+  workflow_dispatch:         # triggered every hour by cron-job.org, or by hand
+
+permissions:
+  contents: read             # this workflow only reads the repository
+
+concurrency:
+  group: load                # never run two loads at the same time
+  cancel-in-progress: false
+
+jobs:
+  load:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Get the code (main)
+        uses: actions/checkout@v4
+
+      - name: Get the data (data branch)
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data-branch
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Load the last 2 days of events into Postgres
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: uv run --no-dev src/belib_forecast/load_to_db.py data-branch --days 2

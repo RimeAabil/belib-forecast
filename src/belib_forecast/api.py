@@ -2,12 +2,17 @@ import os
 import time
 from collections import Counter, defaultdict
 
+import psycopg
 import requests
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from belib_forecast.collect_once import fetch_records
+
+load_dotenv()  # reads .env locally; in production the platform sets the variables
+DATABASE_URL = os.getenv("DATABASE_URL_POOLED") or os.getenv("DATABASE_URL")
 
 app = FastAPI(title="Belib' Forecast API")
 
@@ -54,6 +59,41 @@ class Station(BaseModel):
     out_of_service: int
 
 
+class HourlyActivity(BaseModel):
+    hour: int
+    avg_arrivals: float
+
+
+# Average number of cars plugging in, per hour of the day (Paris time), at one
+# station. An arrival = a real change to "Occupé (en charge)" (same-status noise
+# is removed with LAG). Averaged over the number of days covered by the collector.
+HOURLY_ACTIVITY_SQL = """
+WITH changes AS (
+    SELECT e.statut, e.last_updated,
+           LAG(e.statut) OVER (PARTITION BY e.id_pdc ORDER BY e.last_updated) AS prev
+    FROM events e
+    JOIN points p USING (id_pdc)
+    WHERE p.adresse_station = %(adresse)s
+),
+arrivals AS (
+    SELECT EXTRACT(HOUR FROM last_updated AT TIME ZONE 'Europe/Paris') AS hour
+    FROM changes
+    WHERE prev IS NOT NULL AND prev <> statut AND statut = 'Occupé (en charge)'
+),
+period AS (
+    SELECT GREATEST(EXTRACT(EPOCH FROM MAX(run_at) - MIN(run_at)) / 86400, 1) AS days
+    FROM runs
+)
+SELECT h AS hour,
+       ROUND((COUNT(a.hour) / (SELECT days FROM period))::numeric, 2)::float
+           AS avg_arrivals
+FROM generate_series(0, 23) AS h
+LEFT JOIN arrivals a ON a.hour = h
+GROUP BY h
+ORDER BY h
+"""
+
+
 def to_point(r: dict) -> Point:
     coords = r.get("coordonneesxy") or {}
     return Point(
@@ -77,7 +117,7 @@ def get_points() -> list[Point]:
                 return _cache["points"]
             raise HTTPException(
                 status_code=503, detail="Belib' data source unavailable"
-            )
+            ) from None
         _cache["points"] = [to_point(r) for r in records if r.get("id_pdc")]
         _cache["fetched_at"] = time.time()
     return _cache["points"]
@@ -149,3 +189,25 @@ def list_stations():
             )
         )
     return sorted(stations, key=lambda s: s.adresse)
+
+
+@app.get("/stations/activity", response_model=list[HourlyActivity])
+def station_activity(adresse: str):
+    """Typical arrivals per hour of the day at one station (history in Postgres)."""
+    if not DATABASE_URL:
+        raise HTTPException(status_code=503, detail="Database not configured")
+    try:
+        with psycopg.connect(DATABASE_URL) as conn, conn.cursor() as cur:
+            cur.execute(
+                "SELECT 1 FROM points WHERE adresse_station = %(adresse)s LIMIT 1",
+                {"adresse": adresse},
+            )
+            if cur.fetchone() is None:
+                raise HTTPException(
+                    status_code=404, detail=f"Station {adresse} not found"
+                )
+            cur.execute(HOURLY_ACTIVITY_SQL, {"adresse": adresse})
+            rows = cur.fetchall()
+    except psycopg.OperationalError:
+        raise HTTPException(status_code=503, detail="Database unavailable") from None
+    return [HourlyActivity(hour=h, avg_arrivals=v) for h, v in rows]
