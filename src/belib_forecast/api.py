@@ -1,18 +1,21 @@
 import time
 from collections import Counter, defaultdict
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
 from belib_forecast.collect_once import fetch_records
+import os
 
 app = FastAPI(title="Belib' Forecast API")
+
+ALLOWED_ORIGINS = os.getenv(
+    "CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173"
+).split(",")
 
 # Allow only the local frontend (Vite dev server), and only read requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["GET"],
     allow_headers=["*"],
 )
@@ -35,6 +38,16 @@ class ArrondissementStats(BaseModel):
     arrondissement: str
     free_points: int
     total_points: int
+
+class Station(BaseModel):
+    adresse: str
+    arrondissement: str | None = None
+    lat: float
+    lon: float
+    total: int
+    available: int
+    occupied: int
+    out_of_service: int
 
 
 def to_point(r: dict) -> Point:
@@ -102,3 +115,29 @@ def list_arrondissements():
         ArrondissementStats(arrondissement=a, free_points=free[a], total_points=total[a])
         for a in sorted(total)
     ]
+
+
+@app.get("/stations", response_model=list[Station])
+def list_stations():
+    groups: dict[str, list[Point]] = defaultdict(list)
+    for p in get_points():
+        if p.adresse_station and p.lat is not None and p.lon is not None:
+            groups[p.adresse_station].append(p)
+
+    stations = []
+    for adresse, pts in groups.items():
+        available = sum(p.statut == "Disponible" for p in pts)
+        occupied = sum(p.statut == "Occupé (en charge)" for p in pts)
+        stations.append(
+            Station(
+                adresse=adresse,
+                arrondissement=pts[0].arrondissement,
+                lat=pts[0].lat,
+                lon=pts[0].lon,
+                total=len(pts),
+                available=available,
+                occupied=occupied,
+                out_of_service=len(pts) - available - occupied,
+            )
+        )
+    return sorted(stations, key=lambda s: s.adresse)
