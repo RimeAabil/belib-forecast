@@ -1,10 +1,13 @@
+import os
 import time
 from collections import Counter, defaultdict
+
+import requests
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
 from belib_forecast.collect_once import fetch_records
-import os
 
 app = FastAPI(title="Belib' Forecast API")
 
@@ -39,6 +42,7 @@ class ArrondissementStats(BaseModel):
     free_points: int
     total_points: int
 
+
 class Station(BaseModel):
     adresse: str
     arrondissement: str | None = None
@@ -68,10 +72,12 @@ def get_points() -> list[Point]:
     if time.time() - _cache["fetched_at"] > CACHE_SECONDS:
         try:
             records = fetch_records()
-        except Exception:
+        except (requests.RequestException, ValueError):
             if _cache["points"]:  # the source is down: serve the last known data
                 return _cache["points"]
-            raise HTTPException(status_code=503, detail="Belib' data source unavailable")
+            raise HTTPException(
+                status_code=503, detail="Belib' data source unavailable"
+            )
         _cache["points"] = [to_point(r) for r in records if r.get("id_pdc")]
         _cache["fetched_at"] = time.time()
     return _cache["points"]
@@ -112,7 +118,9 @@ def list_arrondissements():
     total = Counter(p.arrondissement for p in points)
     free = Counter(p.arrondissement for p in points if p.statut == "Disponible")
     return [
-        ArrondissementStats(arrondissement=a, free_points=free[a], total_points=total[a])
+        ArrondissementStats(
+            arrondissement=a, free_points=free[a], total_points=total[a]
+        )
         for a in sorted(total)
     ]
 

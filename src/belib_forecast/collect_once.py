@@ -1,6 +1,6 @@
 import csv
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import requests
@@ -12,7 +12,14 @@ URL = (
 )
 EVENT_FIELDS = ["id_pdc", "statut", "last_updated", "first_seen_at"]
 STATE_FIELDS = ["id_pdc", "statut", "last_updated"]
-POINT_FIELDS = ["id_pdc", "adresse_station", "arrondissement", "code_insee", "lat", "lon"]
+POINT_FIELDS = [
+    "id_pdc",
+    "adresse_station",
+    "arrondissement",
+    "code_insee",
+    "lat",
+    "lon",
+]
 RUN_FIELDS = ["run_at", "n_points", "n_new_events", "error"]
 
 
@@ -27,7 +34,9 @@ def load_state(path):
     if not path.exists():
         return {}
     with path.open(newline="", encoding="utf-8") as f:
-        return {r["id_pdc"]: (r["statut"], r["last_updated"]) for r in csv.DictReader(f)}
+        return {
+            r["id_pdc"]: (r["statut"], r["last_updated"]) for r in csv.DictReader(f)
+        }
 
 
 def write_rows(path, fields, rows, mode):
@@ -42,15 +51,19 @@ def write_rows(path, fields, rows, mode):
 
 
 def main(data_dir):
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     now_iso = now.isoformat(timespec="seconds")
     runs_path = data_dir / "runs.csv"
 
     try:
         records = fetch_records()
-    except Exception as e:
-        write_rows(runs_path, RUN_FIELDS,
-                   [{"run_at": now_iso, "n_points": "", "n_new_events": "", "error": str(e)}], "a")
+    except (requests.RequestException, ValueError) as e:
+        write_rows(
+            runs_path,
+            RUN_FIELDS,
+            [{"run_at": now_iso, "n_points": "", "n_new_events": "", "error": str(e)}],
+            "a",
+        )
         print(f"{now_iso}  ERROR: {e}")
         return
 
@@ -59,28 +72,60 @@ def main(data_dir):
 
     new_events, points = [], []
     for r in records:
-        pid, statut, updated = r.get("id_pdc"), r.get("statut_pdc"), r.get("last_updated")
+        pid, statut, updated = (
+            r.get("id_pdc"),
+            r.get("statut_pdc"),
+            r.get("last_updated"),
+        )
         if not (pid and statut and updated):
             continue
         if state.get(pid) != (statut, updated):  # something changed since last run
-            new_events.append({"id_pdc": pid, "statut": statut,
-                               "last_updated": updated, "first_seen_at": now_iso})
+            new_events.append(
+                {
+                    "id_pdc": pid,
+                    "statut": statut,
+                    "last_updated": updated,
+                    "first_seen_at": now_iso,
+                }
+            )
         state[pid] = (statut, updated)
 
         coords = r.get("coordonneesxy") or {}
-        points.append({"id_pdc": pid, "adresse_station": r.get("adresse_station"),
-                       "arrondissement": r.get("arrondissement"),
-                       "code_insee": r.get("code_insee_commune"),
-                       "lat": coords.get("lat"), "lon": coords.get("lon")})
+        points.append(
+            {
+                "id_pdc": pid,
+                "adresse_station": r.get("adresse_station"),
+                "arrondissement": r.get("arrondissement"),
+                "code_insee": r.get("code_insee_commune"),
+                "lat": coords.get("lat"),
+                "lon": coords.get("lon"),
+            }
+        )
 
     # one events file per day keeps files small and easy to load
-    write_rows(data_dir / "events" / f"{now:%Y-%m-%d}.csv", EVENT_FIELDS, new_events, "a")
-    write_rows(state_path, STATE_FIELDS,
-               [{"id_pdc": k, "statut": s, "last_updated": u} for k, (s, u) in state.items()], "w")
+    write_rows(
+        data_dir / "events" / f"{now:%Y-%m-%d}.csv", EVENT_FIELDS, new_events, "a"
+    )
+    write_rows(
+        state_path,
+        STATE_FIELDS,
+        [{"id_pdc": k, "statut": s, "last_updated": u} for k, (s, u) in state.items()],
+        "w",
+    )
     write_rows(data_dir / "points.csv", POINT_FIELDS, points, "w")
-    write_rows(runs_path, RUN_FIELDS,
-               [{"run_at": now_iso, "n_points": len(records),
-                 "n_new_events": len(new_events), "error": ""}], "a")
+    write_rows(
+        runs_path,
+        RUN_FIELDS,
+        [
+            {
+                "run_at": now_iso,
+                "n_points": len(records),
+                "n_new_events": len(new_events),
+                "error": "",
+            }
+        ],
+        "a",
+    )
     print(f"{now_iso}  {len(records)} points, {len(new_events)} new events")
 
 
